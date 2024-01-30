@@ -1,0 +1,137 @@
+[1/10] Performing build step for 'bootloader'
+[1/1] cmd.exe /C "cd /D "C:\Users\35192\Desktop\Cypress\Terminal\Cypress Terminal Platform\e3_rgb_controller\build\bootloader\esp-idf\esptool_py" && C:\Espressif\python_env\idf5.0_py3.8_env\Scripts\python.exe C:/esp/esp-idf-v5.0.1/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 "C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/build/bootloader/bootloader.bin""
+Bootloader binary size 0x6710 bytes. 0x8f0 bytes (8%) free.
+[2/8] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/TcpServer.c.obj
+C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/TcpServer.c: In function 'process_tcp_data':
+C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/TcpServer.c:84:31: warning: passing argument 2 of 'memcpy' makes pointer from integer without a cast [-Wint-conversion]
+   84 |         memcpy(temp_red_str , *(rx_value + 3) , RGB_VALUE_DATA_LENGTH);
+      |                               ^~~~~~~~~~~~~~~
+      |                               |
+      |                               char
+In file included from C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/context.h:7,
+                 from C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/TcpServer.c:1:
+c:\espressif\tools\xtensa-esp32-elf\esp-2022r1-11.2.0\xtensa-esp32-elf\xtensa-esp32-elf\sys-include\string.h:31:36: note: expected 'const void * restrict' but argument is of type 'char'
+   31 | void *   memcpy (void *__restrict, const void *__restrict, size_t);
+      |                                    ^
+C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/TcpServer.c:83:14: warning: unused variable 'temp_blue_str' [-Wunused-variable]
+   83 |         char temp_blue_str[RGB_VALUE_DATA_LENGTH + 1];
+      |              ^~~~~~~~~~~~~
+C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/TcpServer.c:82:14: warning: unused variable 'temp_green_str' [-Wunused-variable]
+   82 |         char temp_green_str[RGB_VALUE_DATA_LENGTH + 1];
+      |              ^~~~~~~~~~~~~~
+C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/TcpServer.c: In function 'receiving_tcp_data':
+C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/TcpServer.c:179:128: warning: passing argument 4 of 'xTaskCreate' makes pointer from integer without a cast [-Wint-conversion]
+  179 |                         xTaskCreate(check_tcp_recv_timeout_task, "check_tcp_recv_timeout", CHECK_TCP_TIMEOUT_TASK_STACK_DEPTH, sock , 5, NULL);
+      |                                                                                                                                ^~~~
+      |                                                                                                                                |
+      |                                                                                                                                int
+In file included from C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/context.h:2,
+                 from C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/TcpServer.c:1:
+C:/esp/esp-idf-v5.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/task.h:447:42: note: expected 'void * const' but argument is of type 'int'
+  447 |                             void * const pvParameters,
+      |                             ~~~~~~~~~~~~~^~~~~~~~~~~~
+C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/TcpServer.c:185:120: warning: passing argument 4 of 'xTaskCreate' makes pointer from integer without a cast [-Wint-conversion]
+  185 |                 xTaskCreate(check_tcp_recv_timeout_task, "check_tcp_recv_timeout", CHECK_TCP_TIMEOUT_TASK_STACK_DEPTH, sock , 5, NULL);
+      |                                                                                                                        ^~~~
+      |                                                                                                                        |
+      |                                                                                                                        int
+In file included from C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/context.h:2,
+                 from C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/TcpServer.c:1:
+C:/esp/esp-idf-v5.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/task.h:447:42: note: expected 'void * const' but argument is of type 'int'
+  447 |                             void * const pvParameters,
+      |                             ~~~~~~~~~~~~~^~~~~~~~~~~~
+C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/TcpServer.c: In function 'tcp_server_task':
+C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/TcpServer.c:308:33: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [-Wincompatible-pointer-types]
+  308 |                     xTaskCreate(receiving_tcp_data, "receiving_tcp_data", TCP_SERVER_TASK_STACK_DEPTH, sock , 5, NULL);
+      |                                 ^~~~~~~~~~~~~~~~~~
+      |                                 |
+      |                                 void (*)(int,  int)
+In file included from C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/context.h:2,
+                 from C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/TcpServer.c:1:
+C:/esp/esp-idf-v5.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/task.h:444:44: note: expected 'TaskFunction_t' {aka 'void (*)(void *)'} but argument is of type 'void (*)(int,  int)'
+  444 |                             TaskFunction_t pvTaskCode,
+      |                             ~~~~~~~~~~~~~~~^~~~~~~~~~
+C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/TcpServer.c:308:104: warning: passing argument 4 of 'xTaskCreate' makes pointer from integer without a cast [-Wint-conversion]
+  308 |                     xTaskCreate(receiving_tcp_data, "receiving_tcp_data", TCP_SERVER_TASK_STACK_DEPTH, sock , 5, NULL);
+      |                                                                                                        ^~~~
+      |                                                                                                        |
+      |                                                                                                        int
+In file included from C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/context.h:2,
+                 from C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/TcpServer.c:1:
+C:/esp/esp-idf-v5.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/task.h:447:42: note: expected 'void * const' but argument is of type 'int'
+  447 |                             void * const pvParameters,
+      |                             ~~~~~~~~~~~~~^~~~~~~~~~~~
+[3/8] Linking C static library esp-idf\main\libmain.a
+[4/8] Generating ld/sections.ld
+[5/8] Linking CXX executable e2_output_control.elf
+[6/8] Generating binary image from built executable
+esptool.py v4.5.1
+Creating esp32 image...
+Merged 25 ELF sections
+Successfully created esp32 image.
+Generated C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/build/e2_output_control.bin
+[7/8] cmd.exe /C "cd /D "C:\Users\35192\Desktop\Cypress\Terminal\Cypress Terminal Platform\e3_rgb_controller\build\esp-idf\esptool_py" && C:\Espressif\python_env\idf5.0_py3.8_env\Scripts\python.exe C:/esp/esp-idf-v5.0.1/components/partition_table/check_sizes.py --offset 0x8000 partition --type app "C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/build/partition_table/partition-table.bin" "C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/build/e2_output_control.bin""
+e2_output_control.bin binary size 0xb6d30 bytes. Smallest app partition is 0x100000 bytes. 0x492d0 bytes (29%) free.
+[7/8] cmd.exe /C "cd /D C:\esp\esp-idf-v5.0.1\components\esptool_py && C:\Espressif\tools\cmake\3.24.0\bin\cmake.exe -D IDF_PATH=C:/esp/esp-idf-v5.0.1 -D SERIAL_TOOL=C:/Espressif/python_env/idf5.0_py3.8_env/Scripts/python.exe;;C:/esp/esp-idf-v5.0.1/components/esptool_py/esptool/esptool.py;--chip;esp32 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D "WORKING_DIRECTORY=C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/build" -P C:/esp/esp-idf-v5.0.1/components/esptool_py/run_serial_tool.cmake"
+esptool esp32 -p COM3 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 e2_output_control.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.5.1
+Serial port COM3
+Connecting........
+Chip is ESP32-D0WDQ6 (revision v1.0)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: 94:b5:55:24:22:6c
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x000c6fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Compressed 26384 bytes to 16453...
+Writing at 0x00001000... (50 %)
+Writing at 0x000076ad... (100 %)
+Wrote 26384 bytes (16453 compressed) at 0x00001000 in 0.9 seconds (effective 241.1 kbit/s)...
+Hash of data verified.
+Compressed 748848 bytes to 479660...
+Writing at 0x00010000... (3 %)
+Writing at 0x0001c7bf... (6 %)
+Writing at 0x00024f96... (10 %)
+Writing at 0x0002a4ab... (13 %)
+Writing at 0x00034538... (16 %)
+Writing at 0x00039e84... (20 %)
+Writing at 0x0003f8ff... (23 %)
+Writing at 0x00045448... (26 %)
+Writing at 0x0004b297... (30 %)
+Writing at 0x00050abe... (33 %)
+Writing at 0x00055fd9... (36 %)
+Writing at 0x0005b8f4... (40 %)
+Writing at 0x0006122c... (43 %)
+Writing at 0x00066acf... (46 %)
+Writing at 0x0006c85b... (50 %)
+Writing at 0x00071f1f... (53 %)
+Writing at 0x00077142... (56 %)
+Writing at 0x0007c5ab... (60 %)
+Writing at 0x0008194f... (63 %)
+Writing at 0x00087053... (66 %)
+Writing at 0x0008c80b... (70 %)
+Writing at 0x0009247f... (73 %)
+Writing at 0x00097b17... (76 %)
+Writing at 0x0009d62a... (80 %)
+Writing at 0x000a3ac0... (83 %)
+Writing at 0x000a9657... (86 %)
+Writing at 0x000b1d87... (90 %)
+Writing at 0x000ba1fa... (93 %)
+Writing at 0x000c0002... (96 %)
+Writing at 0x000c5228... (100 %)
+Wrote 748848 bytes (479660 compressed) at 0x00010000 in 11.0 seconds (effective 546.8 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 333.1 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

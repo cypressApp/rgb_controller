@@ -1,0 +1,78 @@
+[1/19] Performing build step for 'bootloader'
+[1/1] cmd.exe /C "cd /D "C:\Users\35192\Desktop\Cypress\Terminal\Cypress Terminal Platform\e3_rgb_controller\build\bootloader\esp-idf\esptool_py" && C:\Espressif\python_env\idf5.0_py3.8_env\Scripts\python.exe C:/esp/esp-idf-v5.0.1/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 "C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/build/bootloader/bootloader.bin""
+Bootloader binary size 0x6710 bytes. 0x8f0 bytes (8%) free.
+[2/17] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
+[3/17] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/params.c.obj
+[4/17] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/rgb_handler.c.obj
+[5/17] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/AccessPointMode.c.obj
+C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/AccessPointMode.c: In function 'wifi_event_handler':
+C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/AccessPointMode.c:8:39: warning: unused variable 'event' [-Wunused-variable]
+    8 |         wifi_event_ap_staconnected_t* event = (wifi_event_ap_staconnected_t*) event_data;
+      |                                       ^~~~~
+C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/AccessPointMode.c:12:42: warning: unused variable 'event' [-Wunused-variable]
+   12 |         wifi_event_ap_stadisconnected_t* event = (wifi_event_ap_stadisconnected_t*) event_data;
+      |                                          ^~~~~
+[6/17] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/adc_handler.c.obj
+[7/17] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/pwm_handler.c.obj
+[8/17] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/wifi_info_handler.c.obj
+[9/17] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/GPIO.c.obj
+[10/17] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/StationMode.c.obj
+[11/17] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/TcpServer.c.obj
+C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/TcpServer.c: In function 'receiving_tcp_data':
+C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/TcpServer.c:160:128: warning: passing argument 4 of 'xTaskCreate' makes pointer from integer without a cast [-Wint-conversion]
+  160 |                         xTaskCreate(check_tcp_recv_timeout_task, "check_tcp_recv_timeout", CHECK_TCP_TIMEOUT_TASK_STACK_DEPTH, sock , 5, NULL);
+      |                                                                                                                                ^~~~
+      |                                                                                                                                |
+      |                                                                                                                                int
+In file included from C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/context.h:2,
+                 from C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/TcpServer.c:1:
+C:/esp/esp-idf-v5.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/task.h:447:42: note: expected 'void * const' but argument is of type 'int'
+  447 |                             void * const pvParameters,
+      |                             ~~~~~~~~~~~~~^~~~~~~~~~~~
+C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/TcpServer.c:166:120: warning: passing argument 4 of 'xTaskCreate' makes pointer from integer without a cast [-Wint-conversion]
+  166 |                 xTaskCreate(check_tcp_recv_timeout_task, "check_tcp_recv_timeout", CHECK_TCP_TIMEOUT_TASK_STACK_DEPTH, sock , 5, NULL);
+      |                                                                                                                        ^~~~
+      |                                                                                                                        |
+      |                                                                                                                        int
+In file included from C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/context.h:2,
+                 from C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/TcpServer.c:1:
+C:/esp/esp-idf-v5.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/task.h:447:42: note: expected 'void * const' but argument is of type 'int'
+  447 |                             void * const pvParameters,
+      |                             ~~~~~~~~~~~~~^~~~~~~~~~~~
+C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/TcpServer.c: In function 'tcp_server_task':
+C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/TcpServer.c:289:33: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [-Wincompatible-pointer-types]
+  289 |                     xTaskCreate(receiving_tcp_data, "receiving_tcp_data", TCP_SERVER_TASK_STACK_DEPTH, sock , 5, NULL);
+      |                                 ^~~~~~~~~~~~~~~~~~
+      |                                 |
+      |                                 void (*)(int,  int)
+In file included from C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/context.h:2,
+                 from C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/TcpServer.c:1:
+C:/esp/esp-idf-v5.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/task.h:444:44: note: expected 'TaskFunction_t' {aka 'void (*)(void *)'} but argument is of type 'void (*)(int,  int)'
+  444 |                             TaskFunction_t pvTaskCode,
+      |                             ~~~~~~~~~~~~~~~^~~~~~~~~~
+C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/TcpServer.c:289:104: warning: passing argument 4 of 'xTaskCreate' makes pointer from integer without a cast [-Wint-conversion]
+  289 |                     xTaskCreate(receiving_tcp_data, "receiving_tcp_data", TCP_SERVER_TASK_STACK_DEPTH, sock , 5, NULL);
+      |                                                                                                        ^~~~
+      |                                                                                                        |
+      |                                                                                                        int
+In file included from C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/context.h:2,
+                 from C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/TcpServer.c:1:
+C:/esp/esp-idf-v5.0.1/components/freertos/FreeRTOS-Kernel/include/freertos/task.h:447:42: note: expected 'void * const' but argument is of type 'int'
+  447 |                             void * const pvParameters,
+      |                             ~~~~~~~~~~~~~^~~~~~~~~~~~
+C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/TcpServer.c:239:13: warning: variable 'err' set but not used [-Wunused-but-set-variable]
+  239 |         int err = bind(listen_sock, (struct sockaddr *)&dest_addr, sizeof(dest_addr));
+      |             ^~~
+[12/17] Linking C static library esp-idf\main\libmain.a
+[13/17] Generating ld/sections.ld
+[14/17] Linking CXX executable e2_output_control.elf
+FAILED: e2_output_control.elf 
+cmd.exe /C "cd . && C:\Espressif\tools\xtensa-esp32-elf\esp-2022r1-11.2.0\xtensa-esp32-elf\bin\xtensa-esp32-elf-g++.exe -mlongcalls -Wno-frame-address  @CMakeFiles\e2_output_control.elf.rsp -o e2_output_control.elf  && cd ."
+c:/espressif/tools/xtensa-esp32-elf/esp-2022r1-11.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/11.2.0/../../../../xtensa-esp32-elf/bin/ld.exe: esp-idf/main/libmain.a(GPIO.c.obj):C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/rgb_handler.h:8: multiple definition of `rgb_value'; esp-idf/main/libmain.a(main.c.obj):C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/rgb_handler.h:8: first defined here
+c:/espressif/tools/xtensa-esp32-elf/esp-2022r1-11.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/11.2.0/../../../../xtensa-esp32-elf/bin/ld.exe: esp-idf/main/libmain.a(pwm_handler.c.obj):C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/rgb_handler.h:8: multiple definition of `rgb_value'; esp-idf/main/libmain.a(main.c.obj):C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/rgb_handler.h:8: first defined here
+c:/espressif/tools/xtensa-esp32-elf/esp-2022r1-11.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/11.2.0/../../../../xtensa-esp32-elf/bin/ld.exe: esp-idf/main/libmain.a(StationMode.c.obj):C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/rgb_handler.h:8: multiple definition of `rgb_value'; esp-idf/main/libmain.a(main.c.obj):C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/rgb_handler.h:8: first defined here
+c:/espressif/tools/xtensa-esp32-elf/esp-2022r1-11.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/11.2.0/../../../../xtensa-esp32-elf/bin/ld.exe: esp-idf/main/libmain.a(TcpServer.c.obj):C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/rgb_handler.h:8: multiple definition of `rgb_value'; esp-idf/main/libmain.a(main.c.obj):C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/rgb_handler.h:8: first defined here
+c:/espressif/tools/xtensa-esp32-elf/esp-2022r1-11.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/11.2.0/../../../../xtensa-esp32-elf/bin/ld.exe: esp-idf/main/libmain.a(wifi_info_handler.c.obj):C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/rgb_handler.h:8: multiple definition of `rgb_value'; esp-idf/main/libmain.a(main.c.obj):C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/rgb_handler.h:8: first defined here
+c:/espressif/tools/xtensa-esp32-elf/esp-2022r1-11.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/11.2.0/../../../../xtensa-esp32-elf/bin/ld.exe: esp-idf/main/libmain.a(params.c.obj):C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/rgb_handler.h:8: multiple definition of `rgb_value'; esp-idf/main/libmain.a(main.c.obj):C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/main/rgb_handler.h:8: first defined here
+collect2.exe: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.

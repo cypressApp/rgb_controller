@@ -1,0 +1,78 @@
+[1/10] Performing build step for 'bootloader'
+[1/1] cmd.exe /C "cd /D "C:\Users\35192\Desktop\Cypress\Terminal\Cypress Terminal Platform\e3_rgb_controller\build\bootloader\esp-idf\esptool_py" && C:\Espressif\python_env\idf5.0_py3.8_env\Scripts\python.exe C:/esp/esp-idf-v5.0.1/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 "C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/build/bootloader/bootloader.bin""
+Bootloader binary size 0x6710 bytes. 0x8f0 bytes (8%) free.
+[2/8] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/pwm_handler.c.obj
+[3/8] Linking C static library esp-idf\main\libmain.a
+[4/8] Generating ld/sections.ld
+[5/8] Linking CXX executable e2_output_control.elf
+[6/8] Generating binary image from built executable
+esptool.py v4.5.1
+Creating esp32 image...
+Merged 25 ELF sections
+Successfully created esp32 image.
+Generated C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/build/e2_output_control.bin
+[7/8] cmd.exe /C "cd /D "C:\Users\35192\Desktop\Cypress\Terminal\Cypress Terminal Platform\e3_rgb_controller\build\esp-idf\esptool_py" && C:\Espressif\python_env\idf5.0_py3.8_env\Scripts\python.exe C:/esp/esp-idf-v5.0.1/components/partition_table/check_sizes.py --offset 0x8000 partition --type app "C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/build/partition_table/partition-table.bin" "C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/build/e2_output_control.bin""
+e2_output_control.bin binary size 0xb68f0 bytes. Smallest app partition is 0x100000 bytes. 0x49710 bytes (29%) free.
+[7/8] cmd.exe /C "cd /D C:\esp\esp-idf-v5.0.1\components\esptool_py && C:\Espressif\tools\cmake\3.24.0\bin\cmake.exe -D IDF_PATH=C:/esp/esp-idf-v5.0.1 -D SERIAL_TOOL=C:/Espressif/python_env/idf5.0_py3.8_env/Scripts/python.exe;;C:/esp/esp-idf-v5.0.1/components/esptool_py/esptool/esptool.py;--chip;esp32 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D "WORKING_DIRECTORY=C:/Users/35192/Desktop/Cypress/Terminal/Cypress Terminal Platform/e3_rgb_controller/build" -P C:/esp/esp-idf-v5.0.1/components/esptool_py/run_serial_tool.cmake"
+esptool esp32 -p COM3 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 e2_output_control.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.5.1
+Serial port COM3
+Connecting....
+Chip is ESP32-D0WDQ6 (revision v1.0)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: 94:b5:55:24:22:6c
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x000c6fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Compressed 26384 bytes to 16453...
+Writing at 0x00001000... (50 %)
+Writing at 0x000076ad... (100 %)
+Wrote 26384 bytes (16453 compressed) at 0x00001000 in 0.9 seconds (effective 243.0 kbit/s)...
+Hash of data verified.
+Compressed 747760 bytes to 479370...
+Writing at 0x00010000... (3 %)
+Writing at 0x0001c7eb... (6 %)
+Writing at 0x00024d21... (10 %)
+Writing at 0x0002a249... (13 %)
+Writing at 0x000321dd... (16 %)
+Writing at 0x00037a31... (20 %)
+Writing at 0x0003da85... (23 %)
+Writing at 0x00042f58... (26 %)
+Writing at 0x000484e1... (30 %)
+Writing at 0x0004dcd8... (33 %)
+Writing at 0x0005364e... (36 %)
+Writing at 0x000591f5... (40 %)
+Writing at 0x0005ef01... (43 %)
+Writing at 0x000641fb... (46 %)
+Writing at 0x00069631... (50 %)
+Writing at 0x0006e8fa... (53 %)
+Writing at 0x00073faa... (56 %)
+Writing at 0x000795c7... (60 %)
+Writing at 0x0007ed6a... (63 %)
+Writing at 0x00084985... (66 %)
+Writing at 0x0008a2e7... (70 %)
+Writing at 0x0008fe8b... (73 %)
+Writing at 0x00096157... (76 %)
+Writing at 0x0009b996... (80 %)
+Writing at 0x000a4810... (83 %)
+Writing at 0x000acad2... (86 %)
+Writing at 0x000b4822... (90 %)
+Writing at 0x000ba209... (93 %)
+Writing at 0x000bfd38... (96 %)
+Writing at 0x000c4f5b... (100 %)
+Wrote 747760 bytes (479370 compressed) at 0x00010000 in 11.0 seconds (effective 545.6 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 326.2 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
